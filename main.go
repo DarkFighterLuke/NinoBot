@@ -101,6 +101,9 @@ func (b *bot) Update(update *echotron.Update) {
 			b.sendNinoTypicalExpression(update.Message, 30)
 		} else if strings.Contains(messageTextLower, "cant") && strings.Contains(messageTextLower, "canzone") {
 			b.sendNinoSong(update.Message)
+		} else if strings.Contains(messageTextLower, "anni") && (strings.Contains(messageTextLower, "nino") ||
+			strings.Contains(messageTextLower, "ni") || strings.Contains(messageTextLower, "nì")) {
+			b.sendNinoTypicalExpression(update.Message, 1)
 		} else if strings.Contains(messageTextLower, "ciao") && strings.Contains(messageTextLower, "nino") {
 			b.sendNinoTypicalExpression(update.Message, 10)
 		} else if strings.Contains(messageTextLower, "buon") && (strings.Contains(messageTextLower, "giorn") ||
@@ -108,8 +111,7 @@ func (b *bot) Update(update *echotron.Update) {
 			b.sendNinoTypicalExpression(update.Message, 10)
 		} else if strings.Contains(messageTextLower, "donna") && strings.Contains(messageTextLower, "ideale") {
 			b.sendNinoTypicalExpression(update.Message, -1)
-		} else if strings.Contains(messageTextLower, "nino") || strings.Contains(messageTextLower, "ni") ||
-			strings.Contains(messageTextLower, "nì") {
+		} else if strings.Contains(messageTextLower, "nino") || strings.Contains(messageTextLower, "nì") {
 			b.sendNinoTypicalExpression(update.Message, -1)
 		} else if update.Message.Chat.Type == "private" {
 			b.privateTalkWithNino(update.Message)

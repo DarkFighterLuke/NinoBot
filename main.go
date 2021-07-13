@@ -101,9 +101,9 @@ func (b *bot) Update(update *echotron.Update) {
 			b.sendNinoTypicalExpression(update.Message, 30)
 		} else if strings.Contains(messageTextLower, "cant") && strings.Contains(messageTextLower, "canzone") {
 			b.sendNinoSong(update.Message)
-		} else if strings.Contains(messageTextLower, "anni") && (strings.Contains(messageTextLower, "nino") ||
+			/*} else if strings.Contains(messageTextLower, "anni") && (strings.Contains(messageTextLower, "nino") ||
 			strings.Contains(messageTextLower, "ni") || strings.Contains(messageTextLower, "nì")) {
-			b.sendNinoTypicalExpression(update.Message, 1)
+			b.sendNinoTypicalExpression(update.Message, 1)*/ // Removed because too much verbose in groups
 		} else if strings.Contains(messageTextLower, "ciao") && strings.Contains(messageTextLower, "nino") {
 			b.sendNinoTypicalExpression(update.Message, 10)
 		} else if strings.Contains(messageTextLower, "buon") && (strings.Contains(messageTextLower, "giorn") ||
